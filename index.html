@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MAYNORE | Wear Your Legacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#080808;--cream:#f8f6f0;--gold:#d4af37;--ink:#181818;--muted:#777}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Montserrat,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3,.brand{font-family:Cinzel,serif}
+nav{position:absolute;top:0;width:100%;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:22px 5%;color:#fff}
+.brand{color:var(--gold);text-decoration:none;letter-spacing:6px;font-size:24px}.brand small{display:block;font:9px Montserrat;letter-spacing:3px;text-align:center;margin-top:5px}
+nav ul{display:flex;gap:25px;list-style:none}nav a{color:inherit;text-decoration:none;font-size:11px;letter-spacing:1px}nav a:hover{color:var(--gold)}
+.shop{border:1px solid var(--gold);padding:11px 18px;color:var(--gold)}
+.hero{min-height:720px;padding:150px 8%;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,#050505 15%,rgba(5,5,5,.8),rgba(5,5,5,.2)),url('https://images.pexels.com/photos/28135838/pexels-photo-28135838.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover}
+.hero-copy{max-width:520px}.hero h1{font-size:64px;letter-spacing:11px;color:var(--gold)}.tag{color:var(--gold);letter-spacing:6px;font-size:14px;margin-top:8px}.hero p{line-height:1.9;color:#ddd;margin:25px 0;font-size:14px}
+.btn{display:inline-block;text-decoration:none;padding:13px 22px;font-size:11px;letter-spacing:1px;margin:4px}.gold{background:var(--gold);color:#111}.outline{border:1px solid var(--gold);color:var(--gold)}
+section{padding:85px 6%}.light{background:var(--cream)}.dark{background:var(--black);color:#fff}
+.title{text-align:center;font-size:32px;letter-spacing:2px}.line{height:1px;width:65px;background:var(--gold);margin:18px auto 28px}.sub{text-align:center;color:var(--muted);font-size:12px;margin-bottom:40px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid #ddd3c0;transition:.3s}.card:hover{transform:translateY(-7px);box-shadow:0 18px 35px #0002}.pic{height:300px;background:center/cover}.info{text-align:center;padding:22px}.info h3{font-size:17px}.info p{font-size:12px;color:#777;margin:9px 0 15px}.link{color:#a17a18;text-decoration:none;font-size:11px}
+.features{background:linear-gradient(#050505eF,#050505eF),radial-gradient(circle at 70% 30%, #292929 0%, #101010 35%, #050505 75%)}.features .sub{color:#bbb}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{text-align:center;padding:20px;border-right:1px solid #d4af3740}.feature:last-child{border:0}.icon{font-size:32px;color:var(--gold);margin-bottom:12px}.feature h3{color:var(--gold);font-size:16px;margin-bottom:10px}.feature p{font-size:11px;line-height:1.7;color:#bbb}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about h2{font-size:34px}.about p{line-height:2;color:#666;font-size:13px;margin:20px 0}.about-img{min-height:390px;background:url('https://images.pexels.com/photos/9423283/pexels-photo-9423283.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover}
+.legacy{min-height:390px;display:grid;place-items:center;text-align:center;background:linear-gradient(#000b,#000b),url('https://images.pexels.com/photos/9423283/pexels-photo-9423283.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover;color:#fff}.legacy h2{color:var(--gold);font-size:36px}.legacy p{margin:15px 0 22px;color:#ddd}
+footer{background:var(--cream);padding:65px 6% 20px}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:35px}.foot h3{font-size:14px;margin-bottom:16px}.foot ul{list-style:none}.foot li{margin:9px 0;font-size:11px}.foot a{color:#555;text-decoration:none}.foot a:hover{color:#a17a18}.email{width:100%;padding:12px;border:1px solid #cfc3aa;background:transparent;margin-bottom:8px}.subscribe{width:100%;padding:12px;border:0;background:var(--gold);cursor:pointer}.copy{text-align:center;border-top:1px solid #ddd0b9;margin-top:40px;padding-top:18px;font-size:10px;color:#777}
+.cart{position:fixed;right:20px;bottom:20px;z-index:20;background:var(--gold);color:#111;border:0;border-radius:50%;width:52px;height:52px;font-size:18px;cursor:pointer;box-shadow:0 8px 25px #0004}
+.toast{position:fixed;right:20px;bottom:82px;background:#111;color:#fff;padding:12px 18px;font-size:11px;display:none;z-index:30}.toast.show{display:block}
+@media(max-width:850px){nav ul{display:none}.hero h1{font-size:42px}.products,.feature-grid,.about,.foot{grid-template-columns:1fr}.feature{border-right:0;border-bottom:1px solid #d4af3740}.pic{height:270px}}
+</style>
+</head>
+<body>
+
+<nav>
+<a class="brand" href="#">MAYNORE<small>WEAR YOUR LEGACY</small></a>
+<ul>
+<li><a href="#home">HOME</a></li><li><a href="#collection">COLLECTION</a></li><li><a href="#features">FEATURES</a></li><li><a href="#about">ABOUT</a></li><li><a href="#contact">CONTACT</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-copy">
+<h1>MAYNORE</h1><div class="tag">WEAR YOUR LEGACY</div>
+<p>Every MAYNORE watch is crafted with precision, passion and purpose to accompany your legacy.</p>
+<a class="btn gold" href="#collection">EXPLORE COLLECTION</a>
+<a class="btn outline" href="#about">DISCOVER OUR STORY</a>
+</div>
+</section>
+
+<section class="light" id="collection">
+<h2 class="title">OUR COLLECTION</h2><div class="line"></div><p class="sub">Timeless designs. Uncompromising quality.</p>
+<div class="products">
+<article class="card"><div class="pic" style="background-image:url('https://images.pexels.com/photos/10414974/pexels-photo-10414974.jpeg?auto=compress&cs=tinysrgb&w=1200')"></div><div class="info"><h3>MEN'S WATCHES</h3><p>Bold designs. Built for greatness.</p><a class="link" href="#" onclick="addCart('Men’s Watch');return false">ADD TO ORDER →</a></div></article>
+<article class="card"><div class="pic" style="background-image:url('https://images.pexels.com/photos/35991456/pexels-photo-35991456.jpeg?auto=compress&cs=tinysrgb&w=1200')"></div><div class="info"><h3>WOMEN'S WATCHES</h3><p>Elegance in every detail.</p><a class="link" href="#" onclick="addCart('Women’s Watch');return false">ADD TO ORDER →</a></div></article>
+<article class="card"><div class="pic" style="background-image:url('https://images.pexels.com/photos/22032436/pexels-photo-22032436.jpeg?auto=compress&cs=tinysrgb&w=1200')"></div><div class="info"><h3>PREMIUM COLLECTION</h3><p>Where luxury meets performance.</p><a class="link" href="#" onclick="addCart('Premium Watch');return false">ADD TO ORDER →</a></div></article>
+</div>
+</section>
+
+<section class="dark" id="features">
+<h2 class="title">BUILT ON EXCELLENCE</h2><div class="line"></div>
+<div class="feature-grid">
+<div class="feature"><div class="icon">⚙</div><h3>PRECISION</h3><p>Precision engineered for every second.</p></div>
+<div class="feature"><div class="icon">◇</div><h3>PREMIUM QUALITY</h3><p>Finest materials crafted to perfection.</p></div>
+<div class="feature"><div class="icon">♢</div><h3>WATER RESISTANT</h3><p>Designed for everyday confidence.</p></div>
+<div class="feature"><div class="icon">♜</div><h3>TIMELESS DESIGN</h3><p>Classic design that never goes out of style.</p></div>
+</div>
+</section>
+
+<section class="light about" id="about">
+<div><h2>ABOUT MAYNORE</h2><div class="line" style="margin-left:0"></div>
+<p>At MAYNORE, we believe a watch is more than a timekeeping instrument. It is a part of your legacy. Every detail is designed to reflect elegance, confidence and timeless quality.</p>
+<p>Wear your story. <strong>Wear Your Legacy.</strong></p>
+<a class="btn gold" href="#contact">DISCOVER OUR STORY</a></div>
+<div class="about-img"></div>
+</section>
+
+<section class="legacy">
+<div><h2>A LEGACY FOR GENERATIONS</h2><p>It's not just a watch. It's your legacy.</p><a class="btn gold" href="#collection">SHOP NOW</a></div>
+</section>
+
+<footer id="contact">
+<div class="foot">
+<div><div class="brand" style="color:#222">MAYNORE</div><p style="color:#a17a18;font-size:10px;letter-spacing:3px;margin-top:8px">WEAR YOUR LEGACY</p><p style="font-size:11px;color:#777;margin-top:15px">Timeless by design.<br>Designed for your story.</p></div>
+<div><h3>QUICK LINKS</h3><ul><li><a href="#home">Home</a></li><li><a href="#collection">Collection</a></li><li><a href="#features">Features</a></li><li><a href="#about">About</a></li></ul></div>
+<div><h3>CUSTOMER CARE</h3><ul><li><a href="#">Shipping & Delivery</a></li><li><a href="#">Returns</a></li><li><a href="#">Warranty</a></li><li><a href="#">FAQs</a></li></ul></div>
+<div><h3>STAY CONNECTED</h3><p style="font-size:11px;color:#777;margin-bottom:12px">Subscribe for new releases and exclusive updates.</p><input class="email" type="email" placeholder="Enter your email"><button class="subscribe" onclick="subscribe()">SUBSCRIBE</button></div>
+</div>
+<div class="copy">© 2026 MAYNORE. All Rights Reserved.</div>
+<div style="text-align:center;margin-top:22px;font-size:10px;color:#888;">Product photography sourced from Pexels. Replace these URLs with your own MAYNORE product photos when available.</div></footer>
+
+<button class="cart" onclick="showCart()">🛍</button>
+<div class="toast" id="toast"></div>
+
+<script>
+let cart=[];
+function addCart(item){cart.push(item);notify(item+" added to your order.");}
+function showCart(){notify(cart.length?cart.length+" item(s) in your order.":"Your order is empty.");}
+function subscribe(){notify("Thank you for joining MAYNORE.");}
+function notify(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200);}
+</script>
+</body>
+</html>

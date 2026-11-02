@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAYNORE | Wear Your Legacy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --black: #0b0b0b;
+    --deep-black: #050505;
+    --cream: #f8f6f0;
+    --cream-dark: #eee7d9;
+    --gold: #d4af37;
+    --gold-light: #e3c568;
+    --white: #ffffff;
+    --text: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    font-family: "Cinzel", serif;
+    font-weight: 500;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 6%;
+}
+
+.logo {
+    color: var(--gold);
+    font-family: "Cinzel", serif;
+    font-size: 25px;
+    letter-spacing: 7px;
+    text-decoration: none;
+}
+
+.logo small {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.shop-btn {
+    border: 1px solid var(--gold);
+    padding: 12px 22px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* ================= COMMON ================= */
+
+.section {
+    padding: 90px 6%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 13px;
+    opacity: .7;
+    margin-bottom: 50px;
+}
+
+.gold-line {
+    width: 70px;
+    height: 1px;
+    background: var(--gold);
+    margin: 18px auto 25px;
+}
+
+/* ================= HERO - DARK ================= */
+
+.hero {
+    min-height: 720px;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.65) 45%, rgba(0,0,0,.25)),
+        url("images/hero-watch.jpg") center/cover no-repeat;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    padding: 130px 8% 70px;
+}
+
+.hero-content {
+    max-width: 520px;
+}
+
+.hero-logo {
+    color: var(--gold);
+    font-family: "Cinzel", serif;
+    font-size: 65px;
+    letter-spacing: 12px;
+}
+
+.tagline {
+    color: var(--gold);
+    letter-spacing: 7px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.hero p {
+    margin: 28px 0;
+    line-height: 1.9;
+    color: #ddd;
+    font-size: 14px;
+    max-width: 450px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #111;
+}
+
+.btn-outline {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= COLLECTION - LIGHT ================= */
+
+.collection {
+    background: var(--cream);
+    color: var(--text);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd2bd;
+    transition: .4s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+.product-image {
+    height: 330px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    text-align: center;
+    padding: 25px;
+}
+
+.product-info h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 12px;
+    opacity: .65;
+    margin-bottom: 15px;
+}
+
+.explore {
+    color: #a27b1c;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* ================= FEATURES - DARK ================= */
+
+.features {
+    background:
+        linear-gradient(rgba(5,5,5,.94), rgba(5,5,5,.94)),
+        url("images/marble.jpg") center/cover;
+
+    color: white;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.feature {
+    padding: 20px;
+    border-right: 1px solid rgba(212,175,55,.35);
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.icon {
+    font-size: 38px;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.feature h3 {
+    font-size: 17px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: #ccc;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ================= ABOUT - LIGHT ================= */
+
+.about {
+    background: var(--cream);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.about-image {
+    min-height: 400px;
+    background: url("images/watchmaker.jpg") center/cover;
+}
+
+/* ================= LEGACY - DARK ================= */
+
+.legacy {
+    min-height: 390px;
+
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.55)),
+        url("images/legacy-watch.jpg") center/cover;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.legacy h2 {
+    color: var(--gold);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.legacy p {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+/* ================= FOOTER - LIGHT ================= */
+
+footer {
+    background: var(--cream);
+    color: #222;
+    padding: 70px 6% 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 45px;
+}
+
+.footer-logo {
+    font-family: "Cinzel", serif;
+    color: #222;
+    font-size: 28px;
+    letter-spacing: 7px;
+}
+
+.footer-tagline {
+    color: #a27b1c;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+footer h3 {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--gold);
+}
+
+.newsletter input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cdbf9f;
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.newsletter button {
+    width: 100%;
+    padding: 13px;
+    background: var(--gold);
+    border: none;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #d8cdb8;
+    margin-top: 50px;
+    padding-top: 20px;
+    font-size: 11px;
+    color: #777;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding: 130px 7% 70px;
+    }
+
+    .hero-logo {
+        font-size: 45px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid rgba(212,175,55,.25);
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .section {
+        padding: 65px 5%;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-logo {
+        font-size: 35px;
+        letter-spacing: 7px;
+    }
+
+    .tagline {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        max-width: 220px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+        MAYNORE
+        <small>WEAR YOUR LEGACY</small>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#collection">COLLECTION</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#features">FEATURES</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <a href="#collection" class="shop-btn">SHOP NOW</a>
+
+</header>
+
+
+<!-- ================= DARK ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-logo">MAYNORE</div>
+
+        <div class="tagline">
+            WEAR YOUR LEGACY
+        </div>
+
+        <div class="gold-line" style="margin-left:0"></div>
+
+        <p>
+            Every MAYNORE watch is crafted with precision,
+            passion and purpose to accompany your legacy.
+        </p>
+
+        <div class="buttons">
+            <a href="#collection" class="btn btn-gold">
+                EXPLORE COLLECTION
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                DISCOVER OUR STORY
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LIGHT ================= -->
+
+<section class="section collection" id="collection">
+
+    <h2 class="section-title">OUR COLLECTION</h2>
+
+    <div class="gold-line"></div>
+
+    <p class="section-subtitle">
+        Timeless designs. Uncompromising quality.
+    </p>
+
+    <div class="products">
+
+        <div class="product-card">
+
+            <div class="product-image"
+                 style="background-image:url('images/mens-watch.jpg')">
+            </div>
+
+            <div class="product-info">
+
+                <h3>MEN'S WATCHES</h3>
+
+                <p>
+                    Bold designs. Built for greatness.
+                </p>
+
+                <a href="#" class="explore">
+                    EXPLORE →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <div class="product-image"
+                 style="background-image:url('images/womens-watch.jpg')">
+            </div>
+
+            <div class="product-info">
+
+                <h3>WOMEN'S WATCHES</h3>
+
+                <p>
+                    Elegance in every detail.
+                </p>
+
+                <a href="#" class="explore">
+                    EXPLORE →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <div class="product-image"
+                 style="background-image:url('images/premium-watch.jpg')">
+            </div>
+
+            <div class="product-info">
+
+                <h3>PREMIUM COLLECTION</h3>
+
+                <p>
+                    Where luxury meets performance.
+                </p>
+
+                <a href="#" class="explore">
+                    EXPLORE →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DARK ================= -->
+
+<section class="section features" id="features">
+
+    <h2 class="section-title">
+        BUILT ON EXCELLENCE
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <div class="feature-grid">
+
+        <div class="feature">
+            <div class="icon">⚙</div>
+            <h3>PRECISION</h3>
+            <p>
+                Swiss-inspired precision in every second.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">◇</div>
+            <h3>PREMIUM QUALITY</h3>
+            <p>
+                Finest materials crafted to perfection.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">♢</div>
+            <h3>WATER RESISTANT</h3>
+            <p>
+                Engineered for durability in every condition.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">♢</div>
+            <h3>TIMELESS DESIGN</h3>
+            <p>
+                Classic design that never goes out of style.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LIGHT ================= -->
+
+<section class="section about" id="about">
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <h2>ABOUT MAYNORE</h2>
+
+            <div class="gold-line" style="margin-left:0"></div>
+
+            <p>
+                At MAYNORE, we believe a watch is not just
+                a timekeeping instrument, it's a part of your
+                legacy. Every detail is designed to reflect
+                elegance, power and timeless quality.
+            </p>
+
+            <p>
+                Wear your story. Wear your legacy.
+            </p>
+
+            <a href="#" class="btn btn-gold">
+                DISCOVER OUR STORY
+            </a>
+
+        </div>
+
+        <div class="about-image"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DARK ================= -->
+
+<section class="legacy" id="gallery">
+
+    <div>
+
+        <h2>A LEGACY FOR GENERATIONS</h2>
+
+        <p>
+            It's not just a watch. It's your legacy.
+        </p>
+
+        <a href="#collection" class="btn btn-gold">
+            SHOP NOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LIGHT ================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                MAYNORE
+            </div>
+
+            <div class="footer-tagline">
+                WEAR YOUR LEGACY
+            </div>
+
+            <p style="margin-top:20px;font-size:12px;color:#666;">
+                Timeless by design.<br>
+                Trusted by generations.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>QUICK LINKS</h3>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>CUSTOMER CARE</h3>
+
+            <ul>
+                <li><a href="#">Shipping & Delivery</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Warranty</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+
+        </div>
+
+
+        <div class="newsletter">
+
+            <h3>STAY CONNECTED</h3>
+
+            <p style="font-size:12px;color:#666;margin-bottom:15px;">
+                Subscribe for new releases and exclusive updates.
+            </p>
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+            >
+
+            <button>
+                SUBSCRIBE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 MAYNORE. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
